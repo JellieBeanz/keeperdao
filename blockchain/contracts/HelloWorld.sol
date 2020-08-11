@@ -34,6 +34,7 @@ interface LiquidityPool {
 /// profits from their own balances, keeper contracts will usually engage in
 /// arbitrage or liquidations to earn profits that can be returned.
 contract HelloWorld {
+    mapping(address => uint256) balances;
     /// @dev Owner of the contract.
     address public owner;
 
@@ -45,6 +46,8 @@ contract HelloWorld {
     /// address to which the `helloCallback` function must return all bororwed
     /// assets (and all excess profits).
     address payable public liquidityPool;
+
+    uint total;
 
     /// @dev This modifier restricts the caller of a function to the owner of
     /// this contract.
@@ -134,6 +137,12 @@ contract HelloWorld {
             )
         );
     }
+
+    function deposit() public payable {
+        total += msg.value;
+        balances[msg.sender]+=msg.value;
+        }
+    function() external payable  {deposit();}
 
     /// @dev This is the callback function that implements our custom keeper
     /// logic. We do not need to call this function directly; it will be called

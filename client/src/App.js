@@ -48,6 +48,8 @@ function App() {
   const [getborrowproxy, setGetborrowproxy] = useState(0);
   const [_amountBorrowed, setamountborrowed] = useState(0);
   const [_amountToReturn, setamountToReturn] = useState(0);
+  const [balance, getbalance] = useState(0);
+  const [deposit, setdeposit] = useState(0)
 
   const handleSetProxy = async (e) => {
     e.preventDefault();
@@ -72,7 +74,17 @@ function App() {
     const gas = await contractInstance.methods.hello(_amountBorrowed,_amountToReturn).estimateGas();
     const result = await contractInstance.methods.hello(_amountBorrowed,_amountToReturn).send({ from: account, gas });
     console.log(result);
+  }
 
+  const handleDeposit = async (e) =>{
+    e.preventDefault();
+    const accounts = await window.ethereum.enable();
+    const account = accounts[0];
+    const toAddress = "0xEA5F7d07D17cd2e32586E9f4c0328b0df048E210"
+    const amount = deposit; 
+    // const amountToSend = web3.toWei(amount, "ether"); //convert to wei value
+    const result = contractInstance.methods.deposit().send({from: account, to: toAddress,value:amount} )
+    
   }
 
   return (
@@ -90,8 +102,20 @@ function App() {
             />
           </label>
           <input type="submit" value="Set Address" />
-          </form>
-          <form onSubmit={handleborrow}>
+        </form>
+        <form onSubmit={handleDeposit}>
+          <label>
+            Deposit:
+            <input 
+              type="text"
+              name="name"
+              value={deposit}
+              onChange={ e => setdeposit(e.target.value) }
+            />
+          </label>
+          <input type="submit" value="Deposit" />
+        </form>
+        <form onSubmit={handleborrow}>
           <label>
             Borrow Amount:
             <input 
@@ -119,7 +143,6 @@ function App() {
       </header>
     </div>  
   );
-  
 }
 
 
