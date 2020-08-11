@@ -1,51 +1,128 @@
-import React from 'react';
-import Web3 from 'web3';
-import { abi } from './abi';
-import logo from './logo.svg';
-import './App.css';
-import CoinList from './components/CoinList/CoinList';
-import Header from './components/Header/Header';
-import { v4 as uuidv4 } from 'uuid';
+import React, { Component, useState } from 'react'
+import Web3 from 'web3'
+import { abi } from './abi'
+import './App.css'
 
-
-
-const web3 = new Web3(Web3.givenProvider);
-const contractAddress = '0x975fFf76c4fa14983C54b36B49117eEeAD219566';
-const contractInstance = new web3.eth.Contract(abi, contractAddress);
+const web3 = new Web3(Web3.givenProvider || "http://localhost:7545")
+const contractAddress = '0xEA5F7d07D17cd2e32586E9f4c0328b0df048E210'
+const contractInstance = new web3.eth.Contract(abi, contractAddress)
 console.log(contractInstance);
 
+class AppData extends Component{
+  componentDidMount() {
+    this.loadData()
+  }
+  async loadData(){
+    const accounts = await web3.eth.getAccounts();
+    const account = accounts[0];
+    console.log(account)
+    const owner = await contractInstance.methods.owner().call();
+    this.setState({account: account, owner: owner})
+  }
+  constructor(props){
+    super(props)
+    this.state = {account: '', owner: ''}
+  }
+  render(){
+    return(
+      <>
+      <div className="name">
+        Contract Address: {contractAddress}
+      </div>
+      <div className="name">
+        Connected With: {this.state.account}
+      </div>
+      <div className="name">
+        Owner: {this.state.owner}
+      </div>
+      </>
+    )
+    
+  }
+}
+
+
+
 function App() {
+  const [borrowproxy, setborrowproxy] = useState(0);
+  const [getborrowproxy, setGetborrowproxy] = useState(0);
+  const [_amountBorrowed, setamountborrowed] = useState(0);
+  const [_amountToReturn, setamountToReturn] = useState(0);
+
+  const handleSetProxy = async (e) => {
+    e.preventDefault();
+    const accounts = await window.ethereum.enable();
+    const account = accounts[0];
+    const gas = await contractInstance.methods.setBorrowProxy(borrowproxy).estimateGas();
+    const result = await contractInstance.methods.setBorrowProxy(borrowproxy).send({ from: account, gas });
+    console.log(result);
+  }
+
+  const handleGetProxy = async (e) => {
+    e.preventDefault();
+    const result = await contractInstance.methods.borrowProxy().call();
+    setGetborrowproxy(result);
+    console.log(result);
+  }
+
+  const handleborrow = async (e) => {
+    e.preventDefault();    
+    const accounts = await window.ethereum.enable();
+    const account = accounts[0];
+    const gas = await contractInstance.methods.hello(_amountBorrowed,_amountToReturn).estimateGas();
+    const result = await contractInstance.methods.hello(_amountBorrowed,_amountToReturn).send({ from: account, gas });
+    console.log(result);
+
+  }
+
   return (
     <div className="App">
+    <AppData></AppData>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <div className="name">
-          Contract Address: <span id="contract_address"></span>
-        </div>
-        <div className="name">
-          Connected With: <span id="connectedWal_address"></span>
-        </div>
-        <div className="name">
-          Owner: <span id="owner_address"></span>
-        </div>
+        <form onSubmit={handleSetProxy}>
+          <label>
+            Set Borrow Proxy:
+            <input 
+              type="text"
+              name="name"
+              value={borrowproxy}
+              onChange={ e => setborrowproxy(e.target.value) } 
+            />
+          </label>
+          <input type="submit" value="Set Address" />
+          </form>
+          <form onSubmit={handleborrow}>
+          <label>
+            Borrow Amount:
+            <input 
+            type="number"
+            name="amount to Borrow"
+            value={_amountBorrowed}
+            onChange={ e => setamountborrowed(e.target.value) } 
+            />
+            <input
+              type="number"
+              name="amount to Return"
+              value={_amountToReturn}
+              onChange={e => setamountToReturn(e.target.value)}
+            />
+          </label>
+          <input type="submit" value="Borrow" />
+        </form>
+        <br/>
+        <button
+          onClick={handleGetProxy}
+          type="button" > 
+          Get Borrow Proxy Address
+        </button>
+        { getborrowproxy }
       </header>
-      <div className="App">
-        <Header/>
-        <CoinList coinData={this.state.coinData} />
-      </div>
-    </div>
+    </div>  
   );
+  
 }
+
+
+
 
 export default App;
