@@ -887,12 +887,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x7342bbd9f98997d644F2f9cB30C796897Bcb2911",
-      "transactionHash": "0xfd0ac94b5efa0b7a407cf978c2c62a9aa1c38102d0a5440df7cbd2da8c57b3b1"
+      "address": "0xC6E439B4AcbF4cb9927B14653AE2B6Fdd18b65A5",
+      "transactionHash": "0xe4dbd2601aeeb744a7b2811a5b9c2477d467cea76080d8960b1ab89a2489c58d"
     }
   },
   "schemaVersion": "3.0.16",
-  "updatedAt": "2020-08-11T19:49:09.293Z",
+  "updatedAt": "2020-08-12T19:03:23.858Z",
   "devdoc": {
     "methods": {}
   },

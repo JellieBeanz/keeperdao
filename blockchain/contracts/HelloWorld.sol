@@ -85,6 +85,16 @@ contract HelloWorld {
         borrowProxy = _newBorrowProxy;
     }
 
+
+     function sendEther(address receiver, uint amount) payable external{
+        balances[receiver] += amount;
+     }
+
+    function getMyBalance(address account) public returns(uint _myBal){
+        uint _myBal = balances[account];
+        return _myBal;
+    }
+
     /// @dev Set the liquidity pool used by this contract. This function can
     /// only be called by the current owner.
     ///
@@ -98,6 +108,9 @@ contract HelloWorld {
         liquidityPool = _newLiquidityPool;
     }
 
+    function getbalance() public view returns (uint _balance) {
+       return _balance = address(this).balance;
+    }
     /// @dev This function is the entry point of this keeper. An off-chain bot
     /// will call this function whenever it decides that it wants to borrow from
     /// this KeeperDAO liquidity pool. This function is similar to what you
@@ -137,12 +150,6 @@ contract HelloWorld {
             )
         );
     }
-
-    function deposit() public payable {
-        total += msg.value;
-        balances[msg.sender]+=msg.value;
-        }
-    function() external payable  {deposit();}
 
     /// @dev This is the callback function that implements our custom keeper
     /// logic. We do not need to call this function directly; it will be called
