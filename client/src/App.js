@@ -6,8 +6,9 @@ import ContractBalance from './components/ContractBalance/ContractBalance'
 import { abi } from './abi'
 import './App.css'
 
+const accounts = web3.eth.getAccounts();
 const web3 = new Web3(Web3.givenProvider || "http://localhost:7545")
-const contractAddress = '0xaA4f4fc296Cb45d91d4a401502Fc1204e0844Ff8'
+const contractAddress = '0xFbC9728CB477C763cDe53EF1C5A769D71284D6B7'
 export const contractInstance = new web3.eth.Contract(abi, contractAddress)
 console.log(contractInstance);
 

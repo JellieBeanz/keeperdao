@@ -11,7 +11,7 @@ For the Client:
 	-cd client	
 	-npm install
 	-npm start
-Don't forget to add the contract address into the config file.
+Don't forget to add the contract address into the files.
 
 Uses React, Truffle, Ganache.
 
