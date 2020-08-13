@@ -5518,12 +5518,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xD68F31Db4635dAB9964C9a159643fb0585299fE3",
-      "transactionHash": "0xd63848f795122c608439b0e9d81f147e802bcf7a4ea66a3d6bef28160ec0c69a"
+      "address": "0x6Ae9ABb1bF694E553137b206bed0496f6f9D4FcE",
+      "transactionHash": "0x20b2b0f8cfcb17fdd462292958387e6f16e4f185d6376f85d9a3ae069dd186f3"
     }
   },
   "schemaVersion": "3.0.16",
-  "updatedAt": "2020-08-12T19:03:23.852Z",
+  "updatedAt": "2020-08-12T22:22:31.472Z",
   "devdoc": {
     "methods": {
       "setBorrowProxy(address)": {

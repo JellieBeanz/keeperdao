@@ -1,90 +1,25 @@
-import React, { Component, useState } from 'react'
+import React, { useState } from 'react'
 import Web3 from 'web3'
+import AppData from './components/AppData/AppData'
+import Table from './components/Table/Table'
+import ContractBalance from './components/ContractBalance/ContractBalance'
 import { abi } from './abi'
 import './App.css'
 
 const web3 = new Web3(Web3.givenProvider || "http://localhost:7545")
-const contractAddress = '0xBE38Fd6dF52279c13258153A123b73b0e798a7ab'
-const contractInstance = new web3.eth.Contract(abi, contractAddress)
+const contractAddress = '0x6Ae9ABb1bF694E553137b206bed0496f6f9D4FcE'
+export const contractInstance = new web3.eth.Contract(abi, contractAddress)
 console.log(contractInstance);
-
-class AppData extends Component{
-  componentDidMount() {
-    this.loadData()
-  }
-  async loadData(){
-    const accounts = await web3.eth.getAccounts();
-    const account = accounts[0];
-    console.log(account)
-    const owner = await contractInstance.methods.owner().call();
-    this.setState({account: account, owner: owner})
-  }
-  constructor(props){
-    super(props)
-    this.state = {account: '', owner: ''}
-  }
-  render(){
-    return(
-      <>
-      <div className="name">
-        Contract Address: {contractAddress}
-      </div>
-      <div className="name">
-        Connected With: {this.state.account}
-      </div>
-      <div className="name">
-        Owner: {this.state.owner}
-      </div>
-      </>
-    )
-    
-  }
-}
-class Table extends Component{
-  componentDidMount() {
-    this.loadData()
-  }
-  async loadData(){
-    const accounts = await web3.eth.getAccounts();
-    const account = accounts[0];
-    const accountBal = await contractInstance.methods.getMyBalance().call();
-    this.setState({account: account, accountBal: accountBal});
-  }
-  constructor(props){
-    super(props)
-    this.state = {account: '', accountBal: ''};
-  }
-  render(){
-    return(
-    <>
-      <table>
-        <thead>
-          <tr>
-            <th>Account Address</th>
-            <th>Account Balance</th>
-          </tr>
-        </thead>
-        <tbody>  
-          <tr>
-            <td>{this.state.account}</td>
-            <td>{this.state.accountBal}</td>
-          </tr>
-        </tbody>
-      </table>
-    </>
-    )
-  }
-}
-
 
 
 function App() {
   const [borrowproxy, setborrowproxy] = useState("");
-  const [getborrowproxy, setGetborrowproxy] = useState(0);
-  const [_amountBorrowed, setamountborrowed] = useState(0);
-  const [_amountToReturn, setamountToReturn] = useState(0);
-  const [balance, getbalance] = useState(0);
+  const [getborrowproxy, setGetborrowproxy] = useState();
+  const [_amountBorrowed, setamountborrowed] = useState();
+  const [_amountToReturn, setamountToReturn] = useState();
   const [deposit, setdeposit] = useState(0)
+
+ 
 
   const handleSetProxy = async (e) => {
     e.preventDefault();
@@ -99,13 +34,6 @@ function App() {
     e.preventDefault();
     const result = await contractInstance.methods.borrowProxy().call();
     setGetborrowproxy(result);
-    console.log(result);
-  }
-
-  const handleGetBalance = async (e) =>{
-    e.preventDefault();
-    const result = await contractInstance.methods.getbalance().call();
-    getbalance(result);
     console.log(result);
   }
 
@@ -152,8 +80,8 @@ function App() {
           <label>
             Deposit:
             <input 
-              type="text"
-              name="name"
+              type="number"
+              name="deposit"
               value={deposit}
               onChange={ e => setdeposit(e.target.value) }
             />
@@ -185,13 +113,9 @@ function App() {
           Get Borrow Proxy Address
         </button>
         { getborrowproxy }
-        <button
-          onClick={handleGetBalance}
-          type="button" > 
-          Get Balance
-        </button>
-        { balance } ETH
+        <ContractBalance></ContractBalance>
       </header>
+      
     </div>  
   );
 }

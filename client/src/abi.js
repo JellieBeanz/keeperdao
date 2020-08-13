@@ -1,4 +1,4 @@
-export const abi = [
+export const abi =  [
   {
     "constant": true,
     "inputs": [],
@@ -95,7 +95,12 @@ export const abi = [
   },
   {
     "constant": false,
-    "inputs": [],
+    "inputs": [
+      {
+        "name": "account",
+        "type": "address"
+      }
+    ],
     "name": "getMyBalance",
     "outputs": [
       {
