@@ -7,7 +7,7 @@ import { abi } from './abi'
 import './App.css'
 
 const web3 = new Web3(Web3.givenProvider || "http://localhost:7545")
-const contractAddress = '0x6Ae9ABb1bF694E553137b206bed0496f6f9D4FcE'
+const contractAddress = '0xaA4f4fc296Cb45d91d4a401502Fc1204e0844Ff8'
 export const contractInstance = new web3.eth.Contract(abi, contractAddress)
 console.log(contractInstance);
 

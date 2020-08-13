@@ -2,11 +2,18 @@
   "contractName": "HelloWorld",
   "abi": [
     {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
       "constant": true,
       "inputs": [],
       "name": "borrowProxy",
       "outputs": [
         {
+          "internalType": "address",
           "name": "",
           "type": "address"
         }
@@ -21,6 +28,7 @@
       "name": "liquidityPool",
       "outputs": [
         {
+          "internalType": "address payable",
           "name": "",
           "type": "address"
         }
@@ -35,6 +43,7 @@
       "name": "owner",
       "outputs": [
         {
+          "internalType": "address",
           "name": "",
           "type": "address"
         }
@@ -44,15 +53,10 @@
       "type": "function"
     },
     {
-      "inputs": [],
-      "payable": false,
-      "stateMutability": "nonpayable",
-      "type": "constructor"
-    },
-    {
       "constant": false,
       "inputs": [
         {
+          "internalType": "address",
           "name": "_newOwner",
           "type": "address"
         }
@@ -67,6 +71,7 @@
       "constant": false,
       "inputs": [
         {
+          "internalType": "address",
           "name": "_newBorrowProxy",
           "type": "address"
         }
@@ -81,10 +86,12 @@
       "constant": false,
       "inputs": [
         {
+          "internalType": "address",
           "name": "receiver",
           "type": "address"
         },
         {
+          "internalType": "uint256",
           "name": "amount",
           "type": "uint256"
         }
@@ -99,6 +106,7 @@
       "constant": false,
       "inputs": [
         {
+          "internalType": "address",
           "name": "account",
           "type": "address"
         }
@@ -106,6 +114,7 @@
       "name": "getMyBalance",
       "outputs": [
         {
+          "internalType": "uint256",
           "name": "_myBal",
           "type": "uint256"
         }
@@ -118,6 +127,7 @@
       "constant": false,
       "inputs": [
         {
+          "internalType": "address payable",
           "name": "_newLiquidityPool",
           "type": "address"
         }
@@ -134,6 +144,7 @@
       "name": "getbalance",
       "outputs": [
         {
+          "internalType": "uint256",
           "name": "_balance",
           "type": "uint256"
         }
@@ -146,10 +157,12 @@
       "constant": false,
       "inputs": [
         {
+          "internalType": "uint256",
           "name": "_amountToBorrow",
           "type": "uint256"
         },
         {
+          "internalType": "uint256",
           "name": "_amountOfProfitToReturn",
           "type": "uint256"
         }
@@ -164,10 +177,12 @@
       "constant": false,
       "inputs": [
         {
+          "internalType": "uint256",
           "name": "_amountBorrowed",
           "type": "uint256"
         },
         {
+          "internalType": "uint256",
           "name": "_amountOfProfitToReturn",
           "type": "uint256"
         }
@@ -179,15 +194,15 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"_newLiquidityPool\",\"type\":\"address\"}],\"name\":\"setLiquidityPool\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_newOwner\",\"type\":\"address\"}],\"name\":\"setOwner\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getbalance\",\"outputs\":[{\"name\":\"_balance\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"borrowProxy\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_amountToBorrow\",\"type\":\"uint256\"},{\"name\":\"_amountOfProfitToReturn\",\"type\":\"uint256\"}],\"name\":\"hello\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"liquidityPool\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_newBorrowProxy\",\"type\":\"address\"}],\"name\":\"setBorrowProxy\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"account\",\"type\":\"address\"}],\"name\":\"getMyBalance\",\"outputs\":[{\"name\":\"_myBal\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_amountBorrowed\",\"type\":\"uint256\"},{\"name\":\"_amountOfProfitToReturn\",\"type\":\"uint256\"}],\"name\":\"helloCallback\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"receiver\",\"type\":\"address\"},{\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"sendEther\",\"outputs\":[],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}],\"devdoc\":{\"methods\":{\"setBorrowProxy(address)\":{\"params\":{\"_newBorrowProxy\":\"The new borrow proxy expected by this contract.\"}},\"setOwner(address)\":{\"params\":{\"_newOwner\":\"The new owner of this contract.\"}}}},\"userdoc\":{\"methods\":{\"hello(uint256,uint256)\":{\"notice\":\"contract should be called once the borrowed funds have been transferred.\"},\"helloCallback(uint256,uint256)\":{\"notice\":\"KeeperDAO.\"},\"setLiquidityPool(address)\":{\"notice\":\"return borrowed assets and profits to the liquidty pool.\"}},\"notice\":\"arbitrage or liquidations to earn profits that can be returned.\"}},\"settings\":{\"compilationTarget\":{\"/C/Users/Shane/Documents/keeperdao/blockchain/contracts/HelloWorld.sol\":\"HelloWorld\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/Shane/Documents/keeperdao/blockchain/contracts/HelloWorld.sol\":{\"keccak256\":\"0xd7d9c09e0b2bc40ccc28844a7ff168314a1b5d4255c1554336e0a6e870b4843f\",\"urls\":[\"bzzr://d197cc3f86c50fa0c1d5f9a2403566fd4134461dfef91a57a7e50b891fb102da\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b5033600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610b3e806100616000396000f3fe60806040526004361061009c5760003560e01c8063665a11ca11610064578063665a11ca1461020a57806367d0aa5d146102615780637e3ef7cd146102b25780638da5cb5b14610317578063b13319a41461036e578063c1756a2c146103b35761009c565b806301877020146100a157806313af4035146100f25780634d9b3d5d1461014357806352799cc91461016e5780636190d85b146101c5575b600080fd5b3480156100ad57600080fd5b506100f0600480360360208110156100c457600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610401565b005b3480156100fe57600080fd5b506101416004803603602081101561011557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061049c565b005b34801561014f57600080fd5b50610158610537565b6040518082815260200191505060405180910390f35b34801561017a57600080fd5b50610183610559565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156101d157600080fd5b50610208600480360360408110156101e857600080fd5b81019080803590602001909291908035906020019092919050505061057f565b005b34801561021657600080fd5b5061021f61089b565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561026d57600080fd5b506102b06004803603602081101561028457600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506108c1565b005b3480156102be57600080fd5b50610301600480360360208110156102d557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061095c565b6040518082815260200191505060405180910390f35b34801561032357600080fd5b5061032c6109a9565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561037a57600080fd5b506103b16004803603604081101561039157600080fd5b8101908080359060200190929190803590602001909291905050506109cf565b005b6103ff600480360360408110156103c957600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610ac2565b005b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614156104995780600360006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b50565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614156105345780600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b50565b60003073ffffffffffffffffffffffffffffffffffffffff1631905080905090565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415610897576000811161064b576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252600e8152602001807f70726f666974206973207a65726f00000000000000000000000000000000000081525060200191505060405180910390fd5b803073ffffffffffffffffffffffffffffffffffffffff1631116106d7576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260128152602001807f62616c616e636520697320746f6f206c6f77000000000000000000000000000081525060200191505060405180910390fd5b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16636e2246a773eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee8463b13319a460e01b86866040516024018083815260200182815260200192505050604051602081830303815290604052907bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19166020820180517bffffffffffffffffffffffffffffffffffffffffffffffffffffffff83818316178352505050506040518463ffffffff1660e01b8152600401808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200183815260200180602001828103825283818151815260200191508051906020019080838360005b83811015610830578082015181840152602081019050610815565b50505050905090810190601f16801561085d5780820380516001836020036101000a031916815260200191505b50945050505050600060405180830381600087803b15801561087e57600080fd5b505af1158015610892573d6000803e3d6000fd5b505050505b5050565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614156109595780600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b50565b6000806000808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905080915050919050565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415610abe578181013073ffffffffffffffffffffffffffffffffffffffff16311015610a4857fe5b60008111610a5257fe5b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc8284019081150290604051600060405180830381858888f19350505050158015610abc573d6000803e3d6000fd5b505b5050565b806000808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008282540192505081905550505056fea165627a7a7230582063dcd1b4a5000056c013afc182354de617f1246ba40dbd321c4e3251ff4ce4870029",
-  "deployedBytecode": "0x60806040526004361061009c5760003560e01c8063665a11ca11610064578063665a11ca1461020a57806367d0aa5d146102615780637e3ef7cd146102b25780638da5cb5b14610317578063b13319a41461036e578063c1756a2c146103b35761009c565b806301877020146100a157806313af4035146100f25780634d9b3d5d1461014357806352799cc91461016e5780636190d85b146101c5575b600080fd5b3480156100ad57600080fd5b506100f0600480360360208110156100c457600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610401565b005b3480156100fe57600080fd5b506101416004803603602081101561011557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061049c565b005b34801561014f57600080fd5b50610158610537565b6040518082815260200191505060405180910390f35b34801561017a57600080fd5b50610183610559565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156101d157600080fd5b50610208600480360360408110156101e857600080fd5b81019080803590602001909291908035906020019092919050505061057f565b005b34801561021657600080fd5b5061021f61089b565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561026d57600080fd5b506102b06004803603602081101561028457600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506108c1565b005b3480156102be57600080fd5b50610301600480360360208110156102d557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061095c565b6040518082815260200191505060405180910390f35b34801561032357600080fd5b5061032c6109a9565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561037a57600080fd5b506103b16004803603604081101561039157600080fd5b8101908080359060200190929190803590602001909291905050506109cf565b005b6103ff600480360360408110156103c957600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610ac2565b005b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614156104995780600360006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b50565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614156105345780600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b50565b60003073ffffffffffffffffffffffffffffffffffffffff1631905080905090565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415610897576000811161064b576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252600e8152602001807f70726f666974206973207a65726f00000000000000000000000000000000000081525060200191505060405180910390fd5b803073ffffffffffffffffffffffffffffffffffffffff1631116106d7576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260128152602001807f62616c616e636520697320746f6f206c6f77000000000000000000000000000081525060200191505060405180910390fd5b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16636e2246a773eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee8463b13319a460e01b86866040516024018083815260200182815260200192505050604051602081830303815290604052907bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19166020820180517bffffffffffffffffffffffffffffffffffffffffffffffffffffffff83818316178352505050506040518463ffffffff1660e01b8152600401808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200183815260200180602001828103825283818151815260200191508051906020019080838360005b83811015610830578082015181840152602081019050610815565b50505050905090810190601f16801561085d5780820380516001836020036101000a031916815260200191505b50945050505050600060405180830381600087803b15801561087e57600080fd5b505af1158015610892573d6000803e3d6000fd5b505050505b5050565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614156109595780600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b50565b6000806000808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905080915050919050565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415610abe578181013073ffffffffffffffffffffffffffffffffffffffff16311015610a4857fe5b60008111610a5257fe5b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc8284019081150290604051600060405180830381858888f19350505050158015610abc573d6000803e3d6000fd5b505b5050565b806000808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008282540192505081905550505056fea165627a7a7230582063dcd1b4a5000056c013afc182354de617f1246ba40dbd321c4e3251ff4ce4870029",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"constant\":true,\"inputs\":[],\"name\":\"borrowProxy\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"getMyBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_myBal\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getbalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_balance\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_amountToBorrow\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_amountOfProfitToReturn\",\"type\":\"uint256\"}],\"name\":\"hello\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_amountBorrowed\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_amountOfProfitToReturn\",\"type\":\"uint256\"}],\"name\":\"helloCallback\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"liquidityPool\",\"outputs\":[{\"internalType\":\"address payable\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"receiver\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"sendEther\",\"outputs\":[],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newBorrowProxy\",\"type\":\"address\"}],\"name\":\"setBorrowProxy\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address payable\",\"name\":\"_newLiquidityPool\",\"type\":\"address\"}],\"name\":\"setLiquidityPool\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newOwner\",\"type\":\"address\"}],\"name\":\"setOwner\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"This contract implements a simple keeper. It borrows ETH from the KeeperDAO liquidity pool, and immediately returns all of the borrowed ETH, plus some amount of \\\"profit\\\" from its own balance. Instead of returning profits from their own balances, keeper contracts will usually engage in arbitrage or liquidations to earn profits that can be returned.\",\"methods\":{\"hello(uint256,uint256)\":{\"details\":\"This function is the entry point of this keeper. An off-chain bot will call this function whenever it decides that it wants to borrow from this KeeperDAO liquidity pool. This function is similar to what you would expect in a \\\"real\\\" keeper implementation: it accepts paramters telling it what / how much to borrow, and which callback on this contract should be called once the borrowed funds have been transferred.\"},\"helloCallback(uint256,uint256)\":{\"details\":\"This is the callback function that implements our custom keeper logic. We do not need to call this function directly; it will be called by the KeeperDAO borrow proxy when we call borrow on the KeeperDAO liquidity pool. In fact, usually, this function should be restricted so that is can only be called by the KeeperDAO borrow proxy. \\r Just before this callback is called by the KeeperDAO borrow proxy, all of the assets that we want to borrow will be transferred to this contract. In this callback, we can do whatever we want with these assets; we can arbitrage between DEXs, liquidity positions on Compound, and so on. The only requirement is that at least more than the borrowed assets is returned. \\r For example, imagine that we wanted borrowed 1 ETH. Before this callback is called, the KeeperDAO liquidity pool will have transferred 1 ETH to this contract. This callback can then do whatever it wants with that ETH. However, before the callback returns, it must return at least more than 1 ETH to the KeeperDAO liquidity pool (even if it is only returning 1 ETH + 1 WEI). \\r In our example, we will not implement a complicated keeper strategy. We will simply return all of the borrowed ETH, plus a non-zero amount of profit. The amount of profit is explicitly specified by the owner of this contract when they initiate the borrow. Of course, this strategy does not generate profit by interacting with other protocols (like most keepers do). Instead, it just uses its own balance to return profits to KeeperDAO.\"},\"setBorrowProxy(address)\":{\"details\":\"Set the borrow proxy expected by this contract. This function can only be called by the current owner. \\r\",\"params\":{\"_newBorrowProxy\":\"The new borrow proxy expected by this contract.\"}},\"setLiquidityPool(address)\":{\"details\":\"Set the liquidity pool used by this contract. This function can only be called by the current owner. \\r\",\"params\":{\"_newLiquidityPool\":\"The new liquidity pool used by this contract. It must be a payable address, because this contract needs to be able to return borrowed assets and profits to the liquidty pool.\"}},\"setOwner(address)\":{\"details\":\"Set the owner of this contract. This function can only be called by the current owner. \\r\",\"params\":{\"_newOwner\":\"The new owner of this contract.\"}}}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/github/KeeperDao/blockchain/contracts/HelloWorld.sol\":\"HelloWorld\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/github/KeeperDao/blockchain/contracts/HelloWorld.sol\":{\"keccak256\":\"0xd7d9c09e0b2bc40ccc28844a7ff168314a1b5d4255c1554336e0a6e870b4843f\",\"urls\":[\"bzz-raw://1b7946e37d92a18d377226b45ed567938d87fb6da8e9a653086f11a36267d29d\",\"dweb:/ipfs/QmTmYHEqd96sh1TxVX7ahe8Lp6a24uKm9VjFxCW3W8KtuW\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5033600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610b02806100616000396000f3fe60806040526004361061009c5760003560e01c8063665a11ca11610064578063665a11ca1461020a57806367d0aa5d146102615780637e3ef7cd146102b25780638da5cb5b14610317578063b13319a41461036e578063c1756a2c146103b35761009c565b806301877020146100a157806313af4035146100f25780634d9b3d5d1461014357806352799cc91461016e5780636190d85b146101c5575b600080fd5b3480156100ad57600080fd5b506100f0600480360360208110156100c457600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610401565b005b3480156100fe57600080fd5b506101416004803603602081101561011557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061049c565b005b34801561014f57600080fd5b50610158610537565b6040518082815260200191505060405180910390f35b34801561017a57600080fd5b50610183610542565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156101d157600080fd5b50610208600480360360408110156101e857600080fd5b810190808035906020019092919080359060200190929190505050610568565b005b34801561021657600080fd5b5061021f61086d565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561026d57600080fd5b506102b06004803603602081101561028457600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610893565b005b3480156102be57600080fd5b50610301600480360360208110156102d557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061092e565b6040518082815260200191505060405180910390f35b34801561032357600080fd5b5061032c61097b565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561037a57600080fd5b506103b16004803603604081101561039157600080fd5b8101908080359060200190929190803590602001909291905050506109a1565b005b6103ff600480360360408110156103c957600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610a7d565b005b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614156104995780600360006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b50565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614156105345780600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b50565b600047905080905090565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614156108695760008111610634576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252600e8152602001807f70726f666974206973207a65726f00000000000000000000000000000000000081525060200191505060405180910390fd5b8047116106a9576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260128152602001807f62616c616e636520697320746f6f206c6f77000000000000000000000000000081525060200191505060405180910390fd5b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16636e2246a773eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee8463b13319a460e01b86866040516024018083815260200182815260200192505050604051602081830303815290604052907bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19166020820180517bffffffffffffffffffffffffffffffffffffffffffffffffffffffff83818316178352505050506040518463ffffffff1660e01b8152600401808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200183815260200180602001828103825283818151815260200191508051906020019080838360005b838110156108025780820151818401526020810190506107e7565b50505050905090810190601f16801561082f5780820380516001836020036101000a031916815260200191505b50945050505050600060405180830381600087803b15801561085057600080fd5b505af1158015610864573d6000803e3d6000fd5b505050505b5050565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141561092b5780600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b50565b6000806000808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905080915050919050565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415610a7957818101471015610a0357fe5b60008111610a0d57fe5b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc8284019081150290604051600060405180830381858888f19350505050158015610a77573d6000803e3d6000fd5b505b5050565b806000808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008282540192505081905550505056fea265627a7a723158204e4024b10d9b5d06e9df855824997062a15c8f9ceb5199c7da45f82071f072b764736f6c63430005100032",
+  "deployedBytecode": "0x60806040526004361061009c5760003560e01c8063665a11ca11610064578063665a11ca1461020a57806367d0aa5d146102615780637e3ef7cd146102b25780638da5cb5b14610317578063b13319a41461036e578063c1756a2c146103b35761009c565b806301877020146100a157806313af4035146100f25780634d9b3d5d1461014357806352799cc91461016e5780636190d85b146101c5575b600080fd5b3480156100ad57600080fd5b506100f0600480360360208110156100c457600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610401565b005b3480156100fe57600080fd5b506101416004803603602081101561011557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061049c565b005b34801561014f57600080fd5b50610158610537565b6040518082815260200191505060405180910390f35b34801561017a57600080fd5b50610183610542565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156101d157600080fd5b50610208600480360360408110156101e857600080fd5b810190808035906020019092919080359060200190929190505050610568565b005b34801561021657600080fd5b5061021f61086d565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561026d57600080fd5b506102b06004803603602081101561028457600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610893565b005b3480156102be57600080fd5b50610301600480360360208110156102d557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061092e565b6040518082815260200191505060405180910390f35b34801561032357600080fd5b5061032c61097b565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561037a57600080fd5b506103b16004803603604081101561039157600080fd5b8101908080359060200190929190803590602001909291905050506109a1565b005b6103ff600480360360408110156103c957600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610a7d565b005b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614156104995780600360006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b50565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614156105345780600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b50565b600047905080905090565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614156108695760008111610634576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252600e8152602001807f70726f666974206973207a65726f00000000000000000000000000000000000081525060200191505060405180910390fd5b8047116106a9576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260128152602001807f62616c616e636520697320746f6f206c6f77000000000000000000000000000081525060200191505060405180910390fd5b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16636e2246a773eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee8463b13319a460e01b86866040516024018083815260200182815260200192505050604051602081830303815290604052907bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19166020820180517bffffffffffffffffffffffffffffffffffffffffffffffffffffffff83818316178352505050506040518463ffffffff1660e01b8152600401808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200183815260200180602001828103825283818151815260200191508051906020019080838360005b838110156108025780820151818401526020810190506107e7565b50505050905090810190601f16801561082f5780820380516001836020036101000a031916815260200191505b50945050505050600060405180830381600087803b15801561085057600080fd5b505af1158015610864573d6000803e3d6000fd5b505050505b5050565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141561092b5780600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b50565b6000806000808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905080915050919050565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415610a7957818101471015610a0357fe5b60008111610a0d57fe5b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc8284019081150290604051600060405180830381858888f19350505050158015610a77573d6000803e3d6000fd5b505b5050565b806000808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008282540192505081905550505056fea265627a7a723158204e4024b10d9b5d06e9df855824997062a15c8f9ceb5199c7da45f82071f072b764736f6c63430005100032",
   "sourceMap": "1852:6738:0:-;;;2833:58;8:9:-1;5:2;;;30:1;27;20:12;5:2;2833:58:0;2873:10;2865:5;;:18;;;;;;;;;;;;;;;;;;1852:6738;;;;;;",
-  "deployedSourceMap": "1852:6738:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4148:155;;8:9:-1;5:2;;;30:1;27;20:12;5:2;4148:155:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;4148:155:0;;;;;;;;;;;;;;;;;;;:::i;:::-;;3076:92;;8:9:-1;5:2;;;30:1;27;20:12;5:2;3076:92:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;3076:92:0;;;;;;;;;;;;;;;;;;;:::i;:::-;;4311:115;;8:9:-1;5:2;;;30:1;27;20:12;5:2;4311:115:0;;;:::i;:::-;;;;;;;;;;;;;;;;;;;2123:26;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2123:26:0;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;4905:1433;;8:9:-1;5:2;;;30:1;27;20:12;5:2;4905:1433:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;4905:1433:0;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;2355:36;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2355:36:0;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;3391:116;;8:9:-1;5:2;;;30:1;27;20:12;5:2;3391:116:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;3391:116:0;;;;;;;;;;;;;;;;;;;:::i;:::-;;3640:140;;8:9:-1;5:2;;;30:1;27;20:12;5:2;3640:140:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;3640:140:0;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;1959:20;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1959:20:0;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;8103:484;;8:9:-1;5:2;;;30:1;27;20:12;5:2;8103:484:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;8103:484:0;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;3518:114;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;3518:114:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;4148:155;2570:5;;;;;;;;;;;2556:19;;:10;:19;;;2552:53;;;4278:17;4262:13;;:33;;;;;;;;;;;;;;;;;;2552:53;4148:155;:::o;3076:92::-;2570:5;;;;;;;;;;;2556:19;;:10;:19;;;2552:53;;;3151:9;3143:5;;:17;;;;;;;;;;;;;;;;;;2552:53;3076:92;:::o;4311:115::-;4354:13;4405:4;4397:21;;;4386:32;;;4379:39;;4311:115;:::o;2123:26::-;;;;;;;;;;;;;:::o;4905:1433::-;2570:5;;;;;;;;;;;2556:19;;:10;:19;;;2552:53;;;5065:1;5039:23;:27;5031:54;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5142:23;5126:4;5118:21;;;:47;5096:115;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5366:13;;;;;;;;;;;5352:35;;;5535:42;5714:15;5971:27;;;6070:15;6158:23;5866:453;;;;;;;;;;;;;;;;;;;;;49:4:-1;39:7;30;26:21;22:32;13:7;6:49;5866:453:0;;;;;;;38:4:-1;29:7;25:18;67:10;61:17;96:58;199:8;192:4;186;182:15;179:29;167:10;160:49;0:215;;;5866:453:0;5352:978;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;5352:978:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;5352:978:0;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;5352:978:0;;;;2552:53;4905:1433;;:::o;2355:36::-;;;;;;;;;;;;;:::o;3391:116::-;2570:5;;;;;;;;;;;2556:19;;:10;:19;;;2552:53;;;3484:15;3470:11;;:29;;;;;;;;;;;;;;;;;;2552:53;3391:116;:::o;3640:140::-;3694:11;3717;3731:8;:17;3740:7;3731:17;;;;;;;;;;;;;;;;3717:31;;3766:6;3759:13;;;3640:140;;;:::o;1959:20::-;;;;;;;;;;;;;:::o;8103:484::-;2777:11;;;;;;;;;;;2763:25;;:10;:25;;;2759:59;;;8317:15;8291:23;:41;8274:4;8266:21;;;:66;;8245:98;;;;8387:1;8361:23;:27;8354:35;;;;8514:13;;;;;;;;;;;:22;;:65;8555:23;8537:15;:41;8514:65;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;8514:65:0;2759:59;8103:484;;:::o;3518:114::-;3617:6;3595:8;:18;3604:8;3595:18;;;;;;;;;;;;;;;;:28;;;;;;;;;;;3518:114;;:::o",
+  "deployedSourceMap": "1852:6738:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4148:155;;8:9:-1;5:2;;;30:1;27;20:12;5:2;4148:155:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;4148:155:0;;;;;;;;;;;;;;;;;;;:::i;:::-;;3076:92;;8:9:-1;5:2;;;30:1;27;20:12;5:2;3076:92:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;3076:92:0;;;;;;;;;;;;;;;;;;;:::i;:::-;;4311:115;;8:9:-1;5:2;;;30:1;27;20:12;5:2;4311:115:0;;;:::i;:::-;;;;;;;;;;;;;;;;;;;2123:26;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2123:26:0;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;4905:1433;;8:9:-1;5:2;;;30:1;27;20:12;5:2;4905:1433:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;4905:1433:0;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;2355:36;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2355:36:0;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;3391:116;;8:9:-1;5:2;;;30:1;27;20:12;5:2;3391:116:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;3391:116:0;;;;;;;;;;;;;;;;;;;:::i;:::-;;3640:140;;8:9:-1;5:2;;;30:1;27;20:12;5:2;3640:140:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;3640:140:0;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;1959:20;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1959:20:0;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;8103:484;;8:9:-1;5:2;;;30:1;27;20:12;5:2;8103:484:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;8103:484:0;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;3518:114;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;3518:114:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;4148:155;2570:5;;;;;;;;;;;2556:19;;:10;:19;;;2552:53;;;4278:17;4262:13;;:33;;;;;;;;;;;;;;;;;;2552:53;4148:155;:::o;3076:92::-;2570:5;;;;;;;;;;;2556:19;;:10;:19;;;2552:53;;;3151:9;3143:5;;:17;;;;;;;;;;;;;;;;;;2552:53;3076:92;:::o;4311:115::-;4354:13;4397:21;4386:32;;;4379:39;;4311:115;:::o;2123:26::-;;;;;;;;;;;;;:::o;4905:1433::-;2570:5;;;;;;;;;;;2556:19;;:10;:19;;;2552:53;;;5065:1;5039:23;:27;5031:54;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5142:23;5118:21;:47;5096:115;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5366:13;;;;;;;;;;;5352:35;;;5535:42;5714:15;5971:27;;;6070:15;6158:23;5866:453;;;;;;;;;;;;;;;;;;;;;49:4:-1;39:7;30;26:21;22:32;13:7;6:49;5866:453:0;;;;;;;38:4:-1;29:7;25:18;67:10;61:17;96:58;199:8;192:4;186;182:15;179:29;167:10;160:49;0:215;;;5866:453:0;5352:978;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;5352:978:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;5352:978:0;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;5352:978:0;;;;2552:53;4905:1433;;:::o;2355:36::-;;;;;;;;;;;;;:::o;3391:116::-;2570:5;;;;;;;;;;;2556:19;;:10;:19;;;2552:53;;;3484:15;3470:11;;:29;;;;;;;;;;;;;;;;;;2552:53;3391:116;:::o;3640:140::-;3694:11;3717;3731:8;:17;3740:7;3731:17;;;;;;;;;;;;;;;;3717:31;;3766:6;3759:13;;;3640:140;;;:::o;1959:20::-;;;;;;;;;;;;;:::o;8103:484::-;2777:11;;;;;;;;;;;2763:25;;:10;:25;;;2759:59;;;8317:15;8291:23;:41;8266:21;:66;;8245:98;;;;8387:1;8361:23;:27;8354:35;;;;8514:13;;;;;;;;;;;:22;;:65;8555:23;8537:15;:41;8514:65;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;8514:65:0;2759:59;8103:484;;:::o;3518:114::-;3617:6;3595:8;:18;3604:8;3595:18;;;;;;;;;;;;;;;;:28;;;;;;;;;;;3518:114;;:::o",
   "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.4.21 <0.7.0;\r\n\r\n/// @dev This interfaces defines the functions of the KeeperDAO liquidity pool\r\n/// that our contract needs to know about. The only function we need is the\r\n/// borrow function, which allows us to take flash loans from the liquidity\r\n/// pool.\r\ninterface LiquidityPool {\r\n    /// @dev Borrow ETH/ERC20s from the liquidity pool. This function will (1)\r\n    /// send an amount of tokens to the `msg.sender`, (2) call\r\n    /// `msg.sender.call(_data)` from the KeeperDAO borrow proxy, and then (3)\r\n    /// check that the balance of the liquidity pool is greater than it was\r\n    /// before the borrow.\r\n    ///\r\n    /// @param _token The address of the ERC20 to be borrowed. ETH can be\r\n    /// borrowed by specifying \"0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE\".\r\n    /// @param _amount The amount of the ERC20 (or ETH) to be borrowed. At least\r\n    /// more than this amount must be returned to the liquidity pool before the\r\n    /// end of the transaction, otherwise the transaction will revert.\r\n    /// @param _data The calldata that encodes the callback to be called on the\r\n    /// `msg.sender`. This is the mechanism through which the borrower is able\r\n    /// to implement their custom keeper logic. The callback will be called from\r\n    /// the KeeperDAO borrow proxy.\r\n    function borrow(\r\n        address _token,\r\n        uint256 _amount,\r\n        bytes calldata _data\r\n    ) external;\r\n}\r\n\r\n/// @dev This contract implements a simple keeper. It borrows ETH from the\r\n/// KeeperDAO liquidity pool, and immediately returns all of the borrowed ETH,\r\n/// plus some amount of \"profit\" from its own balance. Instead of returning\r\n/// profits from their own balances, keeper contracts will usually engage in\r\n/// arbitrage or liquidations to earn profits that can be returned.\r\ncontract HelloWorld {\r\n    mapping(address => uint256) balances;\r\n    /// @dev Owner of the contract.\r\n    address public owner;\r\n\r\n    /// @dev Address of the KeeperDAO borrow proxy. This will be the\r\n    /// `msg.sender` for calls to the `helloCallback` function.\r\n    address public borrowProxy;\r\n\r\n    /// @dev Address of the KeeperDAO liquidity pool. This is will be the\r\n    /// address to which the `helloCallback` function must return all bororwed\r\n    /// assets (and all excess profits).\r\n    address payable public liquidityPool;\r\n\r\n    uint total;\r\n\r\n    /// @dev This modifier restricts the caller of a function to the owner of\r\n    /// this contract.\r\n    modifier onlyOwner {\r\n        if (msg.sender == owner) {\r\n            _;\r\n        }\r\n    }\r\n\r\n    /// @dev This modifier restricts the caller of a function to the KeeperDAO\r\n    /// borrow proxy.\r\n    modifier onlyBorrowProxy {\r\n        if (msg.sender == borrowProxy) {\r\n            _;\r\n        }\r\n    }\r\n\r\n    constructor() public {\r\n        owner = msg.sender;\r\n    }\r\n\r\n    /// @dev Set the owner of this contract. This function can only be called by\r\n    /// the current owner.\r\n    ///\r\n    /// @param _newOwner The new owner of this contract.\r\n    function setOwner(address _newOwner) external onlyOwner {\r\n        owner = _newOwner;\r\n    }\r\n\r\n    /// @dev Set the borrow proxy expected by this contract. This function can\r\n    /// only be called by the current owner.\r\n    ///\r\n    /// @param _newBorrowProxy The new borrow proxy expected by this contract.\r\n    function setBorrowProxy(address _newBorrowProxy) external onlyOwner {\r\n        borrowProxy = _newBorrowProxy;\r\n    }\r\n\r\n\r\n     function sendEther(address receiver, uint amount) payable external{\r\n        balances[receiver] += amount;\r\n     }\r\n\r\n    function getMyBalance(address account) public returns(uint _myBal){\r\n        uint _myBal = balances[account];\r\n        return _myBal;\r\n    }\r\n\r\n    /// @dev Set the liquidity pool used by this contract. This function can\r\n    /// only be called by the current owner.\r\n    ///\r\n    /// @param _newLiquidityPool The new liquidity pool used by this contract.\r\n    /// It must be a payable address, because this contract needs to be able to\r\n    /// return borrowed assets and profits to the liquidty pool.\r\n    function setLiquidityPool(address payable _newLiquidityPool)\r\n        external\r\n        onlyOwner\r\n    {\r\n        liquidityPool = _newLiquidityPool;\r\n    }\r\n\r\n    function getbalance() public view returns (uint _balance) {\r\n       return _balance = address(this).balance;\r\n    }\r\n    /// @dev This function is the entry point of this keeper. An off-chain bot\r\n    /// will call this function whenever it decides that it wants to borrow from\r\n    /// this KeeperDAO liquidity pool. This function is similar to what you\r\n    /// would expect in a \"real\" keeper implementation: it accepts paramters\r\n    /// telling it what / how much to borrow, and which callback on this\r\n    /// contract should be called once the borrowed funds have been transferred.\r\n    function hello(uint256 _amountToBorrow, uint256 _amountOfProfitToReturn)\r\n        external\r\n        onlyOwner\r\n    {\r\n        require(_amountOfProfitToReturn > 0, \"profit is zero\");\r\n        require(\r\n            address(this).balance > _amountOfProfitToReturn,\r\n            \"balance is too low\"\r\n        );\r\n\r\n        // The liquidity pool is guarded from re-entrance, so we can only call\r\n        // this function once per transaction.\r\n        LiquidityPool(liquidityPool).borrow(\r\n            // Address of the token we want to borrow. Using this address\r\n            // means that we want to borrow ETH.\r\n            address(0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE),\r\n            // The amount of WEI that we will borrow. We have to return at least\r\n            // more than this amount.\r\n            _amountToBorrow,\r\n            // Encode the callback into calldata. This will be used to call a\r\n            // function on this contract.\r\n            abi.encodeWithSelector(\r\n                // Function selector of the callback function.\r\n                this.helloCallback.selector,\r\n                // First parameter of the callback.\r\n                _amountToBorrow,\r\n                // Second parameter of the callback.\r\n                _amountOfProfitToReturn\r\n                // Third paramter, fourth parameter, and so on (our callback\r\n                // only has two paramters).\r\n            )\r\n        );\r\n    }\r\n\r\n    /// @dev This is the callback function that implements our custom keeper\r\n    /// logic. We do not need to call this function directly; it will be called\r\n    /// by the KeeperDAO borrow proxy when we call borrow on the KeeperDAO\r\n    /// liquidity pool. In fact, usually, this function should be restricted so\r\n    /// that is can only be called by the KeeperDAO borrow proxy.\r\n    ///\r\n    /// Just before this callback is called by the KeeperDAO borrow proxy, all\r\n    /// of the assets that we want to borrow will be transferred to this\r\n    /// contract. In this callback, we can do whatever we want with these\r\n    /// assets; we can arbitrage between DEXs, liquidity positions on Compound,\r\n    /// and so on. The only requirement is that at least more than the borrowed\r\n    /// assets is returned.\r\n    ///\r\n    /// For example, imagine that we wanted borrowed 1 ETH. Before this callback\r\n    /// is called, the KeeperDAO liquidity pool will have transferred 1 ETH to\r\n    /// this contract. This callback can then do whatever it wants with that ETH.\r\n    /// However, before the callback returns, it must return at least more than\r\n    /// 1 ETH to the KeeperDAO liquidity pool (even if it is only returning\r\n    /// 1 ETH + 1 WEI).\r\n    ///\r\n    /// In our example, we will not implement a complicated keeper strategy. We\r\n    /// will simply return all of the borrowed ETH, plus a non-zero amount of\r\n    /// profit. The amount of profit is explicitly specified by the owner of\r\n    /// this contract when they initiate the borrow. Of course, this strategy\r\n    /// does not generate profit by interacting with other protocols (like most\r\n    /// keepers do). Instead, it just uses its own balance to return profits to\r\n    /// KeeperDAO.\r\n    function helloCallback(\r\n        uint256 _amountBorrowed,\r\n        uint256 _amountOfProfitToReturn\r\n    ) external onlyBorrowProxy {\r\n        assert(\r\n            address(this).balance >= _amountOfProfitToReturn + _amountBorrowed\r\n        );\r\n        assert(_amountOfProfitToReturn > 0);\r\n\r\n        // Notice that assets are transferred back to the liquidity pool, not to\r\n        // the borrow proxy.\r\n        liquidityPool.transfer(_amountBorrowed + _amountOfProfitToReturn);\r\n    }\r\n}\r\n",
-  "sourcePath": "C:/Users/Shane/Documents/keeperdao/blockchain/contracts/HelloWorld.sol",
+  "sourcePath": "C:/github/KeeperDao/blockchain/contracts/HelloWorld.sol",
   "ast": {
-    "absolutePath": "/C/Users/Shane/Documents/keeperdao/blockchain/contracts/HelloWorld.sol",
+    "absolutePath": "/C/github/KeeperDao/blockchain/contracts/HelloWorld.sol",
     "exportedSymbols": {
       "HelloWorld": [
         212
@@ -217,7 +232,7 @@
         "baseContracts": [],
         "contractDependencies": [],
         "contractKind": "interface",
-        "documentation": "pool.",
+        "documentation": "@dev This interfaces defines the functions of the KeeperDAO liquidity pool\n that our contract needs to know about. The only function we need is the\n borrow function, which allows us to take flash loans from the liquidity\n pool.",
         "fullyImplemented": false,
         "id": 11,
         "linearizedBaseContracts": [
@@ -228,7 +243,7 @@
         "nodes": [
           {
             "body": null,
-            "documentation": "the KeeperDAO borrow proxy.",
+            "documentation": "@dev Borrow ETH/ERC20s from the liquidity pool. This function will (1)\n send an amount of tokens to the `msg.sender`, (2) call\n `msg.sender.call(_data)` from the KeeperDAO borrow proxy, and then (3)\n check that the balance of the liquidity pool is greater than it was\n before the borrow.\n\r\n @param _token The address of the ERC20 to be borrowed. ETH can be\n borrowed by specifying \"0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE\".\n @param _amount The amount of the ERC20 (or ETH) to be borrowed. At least\n more than this amount must be returned to the liquidity pool before the\n end of the transaction, otherwise the transaction will revert.\n @param _data The calldata that encodes the callback to be called on the\n `msg.sender`. This is the mechanism through which the borrower is able\n to implement their custom keeper logic. The callback will be called from\n the KeeperDAO borrow proxy.",
             "id": 10,
             "implemented": false,
             "kind": "function",
@@ -341,7 +356,7 @@
         "baseContracts": [],
         "contractDependencies": [],
         "contractKind": "contract",
-        "documentation": "arbitrage or liquidations to earn profits that can be returned.",
+        "documentation": "@dev This contract implements a simple keeper. It borrows ETH from the\n KeeperDAO liquidity pool, and immediately returns all of the borrowed ETH,\n plus some amount of \"profit\" from its own balance. Instead of returning\n profits from their own balances, keeper contracts will usually engage in\n arbitrage or liquidations to earn profits that can be returned.",
         "fullyImplemented": true,
         "id": 212,
         "linearizedBaseContracts": [
@@ -589,7 +604,7 @@
                 }
               ]
             },
-            "documentation": "this contract.",
+            "documentation": "@dev This modifier restricts the caller of a function to the owner of\n this contract.",
             "id": 33,
             "name": "onlyOwner",
             "nodeType": "ModifierDefinition",
@@ -689,7 +704,7 @@
                 }
               ]
             },
-            "documentation": "borrow proxy.",
+            "documentation": "@dev This modifier restricts the caller of a function to the KeeperDAO\n borrow proxy.",
             "id": 43,
             "name": "onlyBorrowProxy",
             "nodeType": "ModifierDefinition",
@@ -851,7 +866,7 @@
                 }
               ]
             },
-            "documentation": "@param _newOwner The new owner of this contract.",
+            "documentation": "@dev Set the owner of this contract. This function can only be called by\n the current owner.\n\r\n @param _newOwner The new owner of this contract.",
             "id": 64,
             "implemented": true,
             "kind": "function",
@@ -978,7 +993,7 @@
                 }
               ]
             },
-            "documentation": "@param _newBorrowProxy The new borrow proxy expected by this contract.",
+            "documentation": "@dev Set the borrow proxy expected by this contract. This function can\n only be called by the current owner.\n\r\n @param _newBorrowProxy The new borrow proxy expected by this contract.",
             "id": 76,
             "implemented": true,
             "kind": "function",
@@ -1448,7 +1463,7 @@
                 }
               ]
             },
-            "documentation": "return borrowed assets and profits to the liquidty pool.",
+            "documentation": "@dev Set the liquidity pool used by this contract. This function can\n only be called by the current owner.\n\r\n @param _newLiquidityPool The new liquidity pool used by this contract.\n It must be a payable address, because this contract needs to be able to\n return borrowed assets and profits to the liquidty pool.",
             "id": 118,
             "implemented": true,
             "kind": "function",
@@ -2272,7 +2287,7 @@
                 }
               ]
             },
-            "documentation": "contract should be called once the borrowed funds have been transferred.",
+            "documentation": "@dev This function is the entry point of this keeper. An off-chain bot\n will call this function whenever it decides that it wants to borrow from\n this KeeperDAO liquidity pool. This function is similar to what you\n would expect in a \"real\" keeper implementation: it accepts paramters\n telling it what / how much to borrow, and which callback on this\n contract should be called once the borrowed funds have been transferred.",
             "id": 176,
             "implemented": true,
             "kind": "function",
@@ -2743,7 +2758,7 @@
                 }
               ]
             },
-            "documentation": "KeeperDAO.",
+            "documentation": "@dev This is the callback function that implements our custom keeper\n logic. We do not need to call this function directly; it will be called\n by the KeeperDAO borrow proxy when we call borrow on the KeeperDAO\n liquidity pool. In fact, usually, this function should be restricted so\n that is can only be called by the KeeperDAO borrow proxy.\n\r\n Just before this callback is called by the KeeperDAO borrow proxy, all\n of the assets that we want to borrow will be transferred to this\n contract. In this callback, we can do whatever we want with these\n assets; we can arbitrage between DEXs, liquidity positions on Compound,\n and so on. The only requirement is that at least more than the borrowed\n assets is returned.\n\r\n For example, imagine that we wanted borrowed 1 ETH. Before this callback\n is called, the KeeperDAO liquidity pool will have transferred 1 ETH to\n this contract. This callback can then do whatever it wants with that ETH.\n However, before the callback returns, it must return at least more than\n 1 ETH to the KeeperDAO liquidity pool (even if it is only returning\n 1 ETH + 1 WEI).\n\r\n In our example, we will not implement a complicated keeper strategy. We\n will simply return all of the borrowed ETH, plus a non-zero amount of\n profit. The amount of profit is explicitly specified by the owner of\n this contract when they initiate the borrow. Of course, this strategy\n does not generate profit by interacting with other protocols (like most\n keepers do). Instead, it just uses its own balance to return profits to\n KeeperDAO.",
             "id": 211,
             "implemented": true,
             "kind": "function",
@@ -2849,7 +2864,7 @@
     "src": "33:8559:0"
   },
   "legacyAST": {
-    "absolutePath": "/C/Users/Shane/Documents/keeperdao/blockchain/contracts/HelloWorld.sol",
+    "absolutePath": "/C/github/KeeperDao/blockchain/contracts/HelloWorld.sol",
     "exportedSymbols": {
       "HelloWorld": [
         212
@@ -2879,7 +2894,7 @@
         "baseContracts": [],
         "contractDependencies": [],
         "contractKind": "interface",
-        "documentation": "pool.",
+        "documentation": "@dev This interfaces defines the functions of the KeeperDAO liquidity pool\n that our contract needs to know about. The only function we need is the\n borrow function, which allows us to take flash loans from the liquidity\n pool.",
         "fullyImplemented": false,
         "id": 11,
         "linearizedBaseContracts": [
@@ -2890,7 +2905,7 @@
         "nodes": [
           {
             "body": null,
-            "documentation": "the KeeperDAO borrow proxy.",
+            "documentation": "@dev Borrow ETH/ERC20s from the liquidity pool. This function will (1)\n send an amount of tokens to the `msg.sender`, (2) call\n `msg.sender.call(_data)` from the KeeperDAO borrow proxy, and then (3)\n check that the balance of the liquidity pool is greater than it was\n before the borrow.\n\r\n @param _token The address of the ERC20 to be borrowed. ETH can be\n borrowed by specifying \"0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE\".\n @param _amount The amount of the ERC20 (or ETH) to be borrowed. At least\n more than this amount must be returned to the liquidity pool before the\n end of the transaction, otherwise the transaction will revert.\n @param _data The calldata that encodes the callback to be called on the\n `msg.sender`. This is the mechanism through which the borrower is able\n to implement their custom keeper logic. The callback will be called from\n the KeeperDAO borrow proxy.",
             "id": 10,
             "implemented": false,
             "kind": "function",
@@ -3003,7 +3018,7 @@
         "baseContracts": [],
         "contractDependencies": [],
         "contractKind": "contract",
-        "documentation": "arbitrage or liquidations to earn profits that can be returned.",
+        "documentation": "@dev This contract implements a simple keeper. It borrows ETH from the\n KeeperDAO liquidity pool, and immediately returns all of the borrowed ETH,\n plus some amount of \"profit\" from its own balance. Instead of returning\n profits from their own balances, keeper contracts will usually engage in\n arbitrage or liquidations to earn profits that can be returned.",
         "fullyImplemented": true,
         "id": 212,
         "linearizedBaseContracts": [
@@ -3251,7 +3266,7 @@
                 }
               ]
             },
-            "documentation": "this contract.",
+            "documentation": "@dev This modifier restricts the caller of a function to the owner of\n this contract.",
             "id": 33,
             "name": "onlyOwner",
             "nodeType": "ModifierDefinition",
@@ -3351,7 +3366,7 @@
                 }
               ]
             },
-            "documentation": "borrow proxy.",
+            "documentation": "@dev This modifier restricts the caller of a function to the KeeperDAO\n borrow proxy.",
             "id": 43,
             "name": "onlyBorrowProxy",
             "nodeType": "ModifierDefinition",
@@ -3513,7 +3528,7 @@
                 }
               ]
             },
-            "documentation": "@param _newOwner The new owner of this contract.",
+            "documentation": "@dev Set the owner of this contract. This function can only be called by\n the current owner.\n\r\n @param _newOwner The new owner of this contract.",
             "id": 64,
             "implemented": true,
             "kind": "function",
@@ -3640,7 +3655,7 @@
                 }
               ]
             },
-            "documentation": "@param _newBorrowProxy The new borrow proxy expected by this contract.",
+            "documentation": "@dev Set the borrow proxy expected by this contract. This function can\n only be called by the current owner.\n\r\n @param _newBorrowProxy The new borrow proxy expected by this contract.",
             "id": 76,
             "implemented": true,
             "kind": "function",
@@ -4110,7 +4125,7 @@
                 }
               ]
             },
-            "documentation": "return borrowed assets and profits to the liquidty pool.",
+            "documentation": "@dev Set the liquidity pool used by this contract. This function can\n only be called by the current owner.\n\r\n @param _newLiquidityPool The new liquidity pool used by this contract.\n It must be a payable address, because this contract needs to be able to\n return borrowed assets and profits to the liquidty pool.",
             "id": 118,
             "implemented": true,
             "kind": "function",
@@ -4934,7 +4949,7 @@
                 }
               ]
             },
-            "documentation": "contract should be called once the borrowed funds have been transferred.",
+            "documentation": "@dev This function is the entry point of this keeper. An off-chain bot\n will call this function whenever it decides that it wants to borrow from\n this KeeperDAO liquidity pool. This function is similar to what you\n would expect in a \"real\" keeper implementation: it accepts paramters\n telling it what / how much to borrow, and which callback on this\n contract should be called once the borrowed funds have been transferred.",
             "id": 176,
             "implemented": true,
             "kind": "function",
@@ -5405,7 +5420,7 @@
                 }
               ]
             },
-            "documentation": "KeeperDAO.",
+            "documentation": "@dev This is the callback function that implements our custom keeper\n logic. We do not need to call this function directly; it will be called\n by the KeeperDAO borrow proxy when we call borrow on the KeeperDAO\n liquidity pool. In fact, usually, this function should be restricted so\n that is can only be called by the KeeperDAO borrow proxy.\n\r\n Just before this callback is called by the KeeperDAO borrow proxy, all\n of the assets that we want to borrow will be transferred to this\n contract. In this callback, we can do whatever we want with these\n assets; we can arbitrage between DEXs, liquidity positions on Compound,\n and so on. The only requirement is that at least more than the borrowed\n assets is returned.\n\r\n For example, imagine that we wanted borrowed 1 ETH. Before this callback\n is called, the KeeperDAO liquidity pool will have transferred 1 ETH to\n this contract. This callback can then do whatever it wants with that ETH.\n However, before the callback returns, it must return at least more than\n 1 ETH to the KeeperDAO liquidity pool (even if it is only returning\n 1 ETH + 1 WEI).\n\r\n In our example, we will not implement a complicated keeper strategy. We\n will simply return all of the borrowed ETH, plus a non-zero amount of\n profit. The amount of profit is explicitly specified by the owner of\n this contract when they initiate the borrow. Of course, this strategy\n does not generate profit by interacting with other protocols (like most\n keepers do). Instead, it just uses its own balance to return profits to\n KeeperDAO.",
             "id": 211,
             "implemented": true,
             "kind": "function",
@@ -5512,26 +5527,42 @@
   },
   "compiler": {
     "name": "solc",
-    "version": "0.5.8+commit.23d335f2.Emscripten.clang"
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
   },
   "networks": {
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x6Ae9ABb1bF694E553137b206bed0496f6f9D4FcE",
-      "transactionHash": "0x20b2b0f8cfcb17fdd462292958387e6f16e4f185d6376f85d9a3ae069dd186f3"
+      "address": "0xaA4f4fc296Cb45d91d4a401502Fc1204e0844Ff8",
+      "transactionHash": "0x07d3a01cf76413a538eff836ac8f7cdcb42acbaf0c8f11b0c8f926b66817d241"
     }
   },
-  "schemaVersion": "3.0.16",
-  "updatedAt": "2020-08-12T22:22:31.472Z",
+  "schemaVersion": "3.2.3",
+  "updatedAt": "2020-08-13T16:05:47.170Z",
+  "networkType": "ethereum",
   "devdoc": {
+    "details": "This contract implements a simple keeper. It borrows ETH from the KeeperDAO liquidity pool, and immediately returns all of the borrowed ETH, plus some amount of \"profit\" from its own balance. Instead of returning profits from their own balances, keeper contracts will usually engage in arbitrage or liquidations to earn profits that can be returned.",
     "methods": {
+      "hello(uint256,uint256)": {
+        "details": "This function is the entry point of this keeper. An off-chain bot will call this function whenever it decides that it wants to borrow from this KeeperDAO liquidity pool. This function is similar to what you would expect in a \"real\" keeper implementation: it accepts paramters telling it what / how much to borrow, and which callback on this contract should be called once the borrowed funds have been transferred."
+      },
+      "helloCallback(uint256,uint256)": {
+        "details": "This is the callback function that implements our custom keeper logic. We do not need to call this function directly; it will be called by the KeeperDAO borrow proxy when we call borrow on the KeeperDAO liquidity pool. In fact, usually, this function should be restricted so that is can only be called by the KeeperDAO borrow proxy. \r Just before this callback is called by the KeeperDAO borrow proxy, all of the assets that we want to borrow will be transferred to this contract. In this callback, we can do whatever we want with these assets; we can arbitrage between DEXs, liquidity positions on Compound, and so on. The only requirement is that at least more than the borrowed assets is returned. \r For example, imagine that we wanted borrowed 1 ETH. Before this callback is called, the KeeperDAO liquidity pool will have transferred 1 ETH to this contract. This callback can then do whatever it wants with that ETH. However, before the callback returns, it must return at least more than 1 ETH to the KeeperDAO liquidity pool (even if it is only returning 1 ETH + 1 WEI). \r In our example, we will not implement a complicated keeper strategy. We will simply return all of the borrowed ETH, plus a non-zero amount of profit. The amount of profit is explicitly specified by the owner of this contract when they initiate the borrow. Of course, this strategy does not generate profit by interacting with other protocols (like most keepers do). Instead, it just uses its own balance to return profits to KeeperDAO."
+      },
       "setBorrowProxy(address)": {
+        "details": "Set the borrow proxy expected by this contract. This function can only be called by the current owner. \r",
         "params": {
           "_newBorrowProxy": "The new borrow proxy expected by this contract."
         }
       },
+      "setLiquidityPool(address)": {
+        "details": "Set the liquidity pool used by this contract. This function can only be called by the current owner. \r",
+        "params": {
+          "_newLiquidityPool": "The new liquidity pool used by this contract. It must be a payable address, because this contract needs to be able to return borrowed assets and profits to the liquidty pool."
+        }
+      },
       "setOwner(address)": {
+        "details": "Set the owner of this contract. This function can only be called by the current owner. \r",
         "params": {
           "_newOwner": "The new owner of this contract."
         }
@@ -5539,17 +5570,6 @@
     }
   },
   "userdoc": {
-    "methods": {
-      "hello(uint256,uint256)": {
-        "notice": "contract should be called once the borrowed funds have been transferred."
-      },
-      "helloCallback(uint256,uint256)": {
-        "notice": "KeeperDAO."
-      },
-      "setLiquidityPool(address)": {
-        "notice": "return borrowed assets and profits to the liquidty pool."
-      }
-    },
-    "notice": "arbitrage or liquidations to earn profits that can be returned."
+    "methods": {}
   }
 }
