@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const TableHead = ({resourceType}) =>  {
     if(resourceType === 'deposits'){
@@ -13,20 +13,20 @@ const TableHead = ({resourceType}) =>  {
     }else if(resourceType === 'withdrawls'){
         return (
             <>
-                <th>_reciever</th>
-                <th>_withdrawer</th>
-                <th>_token</th>
-                <th>_amount</th>
-                <th>_burnAmount</th>
+                <th>Reciever</th>
+                <th>Withdrawer</th>
+                <th>Token</th>
+                <th>Amount</th>
+                <th>Burn Amount</th>
             </>
         );
     }else if(resourceType === 'borrow'){
         return (
             <>
-                <th>_borrower</th>
-                <th>_token</th>
-                <th>_amount</th>
-                <th>_fee</th>
+                <th>Borrower</th>
+                <th>Token</th>
+                <th>Amount</th>
+                <th>Fee</th>
             </>
         );
     }
