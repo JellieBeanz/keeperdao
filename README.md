@@ -18,6 +18,8 @@ Thanks so much for the opportuinty and i really look forward to you feedback.
 ## To run the project 
 
 In the project directory, you can run:
+git clone https://github.com/JellieBeanz/keeperdao.git
+cd keeperdao
 npm install 
 then :
 ### `npm start`
