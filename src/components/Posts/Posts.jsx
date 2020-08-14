@@ -1,21 +1,23 @@
-import React from 'react';
-import { render } from '@testing-library/react';
+import React from 'react'
+import { render } from '@testing-library/react'
 
 const Posts = ({ posts, loading, resourceType }) => {
 
+    console.log(posts)
+    
     if (loading) {
         return <h1>Loading....</h1>
     }
     if (resourceType === 'deposits') {
-        render()
-            return (
-                <>
+            return(
+                 <>
                     <td>{posts[0]}</td>
                     <td>{posts[1]}</td>
                     <td>{posts[2]}</td>
                     <td>{posts[3]}</td>
                 </>
-            )
+            ) 
+            
     } else if (resourceType === 'withdrawls') {
         return (
             <>
@@ -35,7 +37,12 @@ const Posts = ({ posts, loading, resourceType }) => {
                 <td>{posts[3]}</td>
             </>
         )
-    }
+    }   
+    
+    // return(
+    //     <>
+    //     </>
+    // )
 
     
 

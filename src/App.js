@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Component } from 'react';
 import './App.css';
 import Web3 from 'web3';
 import { abi } from './abi'
@@ -12,8 +12,15 @@ import Pagination from './components/Pagination/Pagination'
 
 const web3 = new Web3(Web3.givenProvider || "http://localhost:7545")
 const contractAddress = '0xEB7e15B4E38CbEE57a98204D05999C3230d36348'
-export const contractInstance = new web3.eth.Contract(abi, contractAddress)
+const contractInstance = new web3.eth.Contract(abi, contractAddress)
 console.log(contractInstance);
+
+// class postArray extends Component{
+//   constructor(props){
+//     super(props)
+//     this.setState
+//   }
+// }
 
 function App() {
   const [resourceType, setResourceType] = useState('deposits')
@@ -29,6 +36,7 @@ function App() {
         setLoading(true);
         await contractInstance.events.Deposited({fromBlock: 106}).on('data', async function (event) {
           var res =[event.returnValues[0],event.returnValues[1],event.returnValues[2],event.returnValues[3]]
+          console.log(event.returnValues)
           setPosts(res)
           setLoading(false);      
         });
@@ -65,13 +73,13 @@ function App() {
 
   return (
     <>
-      <div>
-        <button onClick={() => setResourceType('deposits')}>deposits</button>
-        <button onClick={() => setResourceType('withdrawls')}>withdrawls</button>
-        <button onClick={() => setResourceType('borrow')}>borrow</button>
+      <div className="card-header">
+          <button className="btn bg-info" onClick={() => setResourceType('deposits')}>deposits</button>
+          <button className="btn bg-info" onClick={() => setResourceType('withdrawls')}>withdrawls</button>
+          <button className="btn bg-info" onClick={() => setResourceType('borrow')}>borrow</button>
       </div>
       <h1>{resourceType}</h1>
-      <table className='table'>
+      <table className='table' id='table'>
         <thead>
           <tr>
           <TableHead resourceType = {resourceType}></TableHead>
